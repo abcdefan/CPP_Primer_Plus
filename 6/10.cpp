@@ -9,21 +9,22 @@ void comfort(void);
 int main(void)
 {
     showmenu();
-    int choice;
-    while (choice != 5)
+    char choice;
+    cin >> choice;
+    while (choice != '5')
     {
         switch (choice)
         {
-        case 1:
+        case '1':
             cout << "Warning!!!\n";
             break;
-        case 2:
+        case '2':
             report();
             break;
-        case 3:
+        case '3':
             cout << "The boss are in all day.\n";
             break;
-        case 4:
+        case '4':
             comfort();
             break;
         default:

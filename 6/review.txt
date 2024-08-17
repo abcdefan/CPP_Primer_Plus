@@ -1,0 +1,65 @@
+1.
+第一种格式每个字符都会判断两次，满足第一次匹配的情况下必然不可能满足第二次匹配
+通过else if可以避免在满足第一次后继续向下匹配
+
+2.
+ch+1会变成字符所对应的ascii码，而++char仍然保留字符形式
+
+3.
+H$i$!$
+$S$e$n$d$ $ct1 = 9, ct2 = 9
+
+4.
+a.
+weight >= 115 && weight < 125
+b.
+ch == 'q' || ch == 'Q'
+c.
+x % 2 == 0 && x != 26
+d.
+x % 2 == 0 && x % 26 != 0
+e.
+donation >= 1000 && donation <=2000 || 1 == guest 
+f.
+isaplha(ch)
+ch >= 'a' && ch <= 'z' || ch >= 'A' && ch << 'Z'
+
+5.
+x = 10;
+!!x = !(!x) = !(0) = 1;
+只有当x=1的时候会相同
+
+不过如果x是布尔类型的话!!x和x确实是相等的，如果是char和int等类型就不一定会相等，只有像x=1这样的特例会相等
+
+6.
+x >= 0 ? x : -x;
+
+7.
+switch(ch)
+{
+    case 'A':
+        a_grade++;
+        break;
+    case 'B':
+        b_grade++;
+        break;
+    case 'C':
+        c_grade++;
+        break;
+    case 'D':
+        d_grade++;
+        break;
+    default:
+        f_grade++;
+}
+
+8.
+原来的choice是int，如果输入q会导致cin错误标记
+需要用cin.clear()和while (cin.get() != '\n');来重置cin和清空输入缓冲区
+
+9.
+int line = 0;
+char ch;
+while (cin.get(ch) && ch != 'Q')
+    if (ch == '\n')
+        ++line;
