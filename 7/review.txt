@@ -1,0 +1,108 @@
+1.
+调用函数 -> 定义函数（在main下方） -> 声明函数
+定义函数（在main下方） -> 声明函数 -> 调用函数
+定义函数（在main上方） -> 调用函数（在main中）
+
+2.
+a. void igor(void);
+b. float tofu(int n);
+c. double mpg(double a, double b);
+d. long summation(long arr[], int n);
+e. double doctor(const string str);
+f. void ofcourse(boss b);
+g. string plot(map *pt);
+
+3. 
+void alter_array(int arr[], int size, int n)
+{
+    for (int i = 0; i < size; ++i)
+        arr[i] = n;
+}
+
+4.
+void alter_array(int *begin, int *end, int value)
+{
+    int *pt = begin; 
+    while (pt != end)
+    {
+        *pt = value;
+        ++pt;
+    }
+}
+
+5.
+double get_max(const double arr[], int size)
+{
+    double max = arr[0];
+    for (int i = 1; i < size; ++i)
+        max = arr[i] > max ? arr[i] : max;
+    return max;
+}
+
+6.
+参数传递：实参的副本传递给形参，这时候的形参只是实参的拷贝
+对于基本类型而言，加不加const都不会影响实参的值，改变的只会是实参的副本
+对于指针类型而言，加了const可以保证值不会变动
+
+7.
+string s = "Hello World"; // 直接定义字符串
+char *ch = "Hello World"; // 指针指向字符串的首地址
+char arr[20] = "Hello World"; // C风格的字符数组
+
+8.
+int replace(char *str, char c1, char c2)
+{
+    char *pt = str;
+    int times = 0;
+    while (*pt != '\0')
+    {
+        if (*pt == c1)
+        {
+            *pt = c2;
+            ++times;
+        }
+        ++pt;
+    }
+    return times;
+}
+
+9.
+*"pizza"的含义就是'p'
+"taco"[2]的含义是'c'
+
+10.
+按值传递的形参里的变量类型就填glitz
+按地址传递的形参里的变量类型填const *glitz
+
+11.
+int judge(int (*pf)(const char *));
+
+12.
+a.
+void show(application a)
+{
+    cout << a.name << endl;
+    for (int i = 0; i < 3; ++i)
+        cout << a.credit_ratings[i] << endl;
+}
+
+b.
+void show(const application *a)
+{
+    cout << a->name << endl;
+    for (int i = 0; i < 3; ++i)
+        cout << a->credit_ratings[i] << endl;
+}
+
+13.
+void f1(applicant *a);
+const char *f2(const applicant *a1, const applicant *a2);
+
+typedef void (*pf1)(applicant *);
+pf1 p1 = f1;
+const char *(*pf2)(const applicant *, const applicant *);
+pf2 p2 = f2;
+
+pf1 ap[5];
+pf2 (*pa)[10];
+
