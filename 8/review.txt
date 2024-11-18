@@ -1,0 +1,98 @@
+1. 函数内部执行时间短（代码量小），函数内部不能出现递归的调用吗，且需要经常执行的函数
+
+2.
+a. void song(const char* name, int times = 1);
+b. 不需要做修改
+c. void song(int times，const char* name = "O.My Papa");
+
+3.
+#include <iostream>
+
+using namespace std;
+
+void iquote(int a);
+void iquote(double b);
+void iquote(string c);
+
+int main(void)
+{
+    int a = 1;
+    double b = 1.1;
+    string c = "c"; 
+    iquote(a);
+    iquote(b);
+    iquote(c);
+    return 0;
+}
+
+void iquote(int a)
+{
+    cout << "\"" << a << "\"" << endl;
+}
+
+void iquote(double b)
+{
+    cout << "\"" << b << "\"" << endl;
+}
+
+void iquote(string c)
+{
+    cout << "\"" << c << "\"" << endl;
+}
+
+4.
+a.
+void display(const box& b)
+{
+    cout << b.maker << endl;
+    cout << b.height << endl;
+    cout << b.width << endl;
+    cout << b.length << endl;
+    cout << b.volume << endl;
+}
+
+b.
+void set(box& b)
+{
+    b.volume = b.height * b.width * b.length;
+}
+
+5.
+see 8/7_15.cpp
+
+6.
+a.
+double mass(double density, double volume = 1.0);
+
+b.
+可以使用函数重载和默认参数结合完成
+void repeat(int times, string content);
+void repeat(string content, int times = 5);
+
+c.
+可以使用函数重载完成
+int average(int a, int b);
+double average(double a, double b);
+
+d.
+不能
+
+7.
+template<typename T>
+T bigger(T a, T b)
+{
+    return a > b ? a : b;
+}
+
+8.
+template<> box bigger<box>(box a, box b)
+{
+    return a.volume > b.volume ? a : b;
+}
+
+9.
+v1 float
+v2 float&
+v3 float&
+v4 int
+v5 double

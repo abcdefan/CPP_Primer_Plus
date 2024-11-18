@@ -2,11 +2,23 @@
 
 using namespace std;
 
+void repeat(int times, string content);
+void repeat(string content, int times = 5);
+
 int main(void)
 {
-    int a = 10; // a是左值 b是右值
-    int b = a; // b是左值 a是右边值
-    // 这里a和b都能作为左值，但是10只能作为右值
-    int&& c = 10;
+    repeat(10, "hhh");
     return 0;
+}
+
+void repeat(int times, string content)
+{
+    for (int i = 0; i < times; ++i)
+        cout << content << endl;
+}
+
+void repeat(string content, int times)
+{
+    for (int i = 0; i < times; ++i)
+        cout << content << endl;    
 }

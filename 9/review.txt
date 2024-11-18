@@ -1,0 +1,39 @@
+1.
+a. 自动存储
+b. 一个文件定义全局变量，另一个文件extern
+c. static 全局变量 静态存储
+d. 在函数内static
+
+
+2
+using声明只声明单独的名称
+using编译指令是命令空间里的所有名称都可以用、
+
+3.
+在所有的cout、cin和endl前加上std::
+
+4.
+去掉using namespace std;
+加上
+using std::cin;
+using std::cout;
+using std::endl;
+
+5.
+因为两个函数的特征标一致，所以没有办法使用函数重载
+让两个文件的average函数定义和声明的时候都加上static，只在当前文件内可见
+
+6.
+10
+4
+0 // 静态变量默认值为0，而不是随机值
+Other: 10, 1
+another(): 10, -4
+
+7.
+1
+4, 1, 2
+2
+2
+4, 1, 2
+2 
